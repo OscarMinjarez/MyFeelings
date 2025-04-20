@@ -2,6 +2,7 @@ package minjarez.oscar.myfeelings.utilities
 
 import android.content.Context
 import android.util.Log
+import java.io.File
 import java.io.IOException
 
 class JsonFile {
@@ -14,9 +15,8 @@ class JsonFile {
 
     fun saveData(context: Context, json: String) {
         try {
-            context.openFileOutput(this.MY_FEELINGS, Context.MODE_PRIVATE).use {
-                it.write(json.toByteArray())
-            }
+            context.filesDir.mkdirs()
+            File(context.filesDir, this.MY_FEELINGS).writeText(json)
         } catch (e: IOException) {
             Log.e("SAVE", "Error in Writing: " + e.localizedMessage)
         }

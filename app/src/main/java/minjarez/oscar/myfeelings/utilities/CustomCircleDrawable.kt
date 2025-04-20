@@ -22,8 +22,8 @@ class CustomCircleDrawable : Drawable {
 
     constructor(context: Context, emotions: ArrayList<Emotion>) {
         this.context = context
-        this.metricWeight = context.resources.getDimension(R.dimen.graphWith) as Int
-        this.backgroundWeight = context.resources.getDimension(R.dimen.graphBackground) as Int
+        this.metricWeight = context.resources.getDimension(R.dimen.graphWith).toInt()
+        this.backgroundWeight = context.resources.getDimension(R.dimen.graphBackground).toInt()
         this.emotions = emotions
     }
 

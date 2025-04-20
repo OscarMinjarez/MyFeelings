@@ -7,6 +7,10 @@ android {
     namespace = "minjarez.oscar.myfeelings"
     compileSdk = 35
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     defaultConfig {
         applicationId = "minjarez.oscar.myfeelings"
         minSdk = 24
